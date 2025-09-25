@@ -6,7 +6,7 @@
     <meta name="description" content="#">
     <meta name="keywords" content="#">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>#</title>
+    <title>V-MORALS</title>
 
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -62,7 +62,7 @@ of Regions of Attraction in a Learned Space</h1>
                                 </span>
 
                                 <span class="link-block">
-                                    <a href="#" target="_blank"
+                                    <a href="https://anonymous.4open.science/r/V-MORALS-BB48/README.md" target="_blank"
                                         class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="fab fa-github"></i>
@@ -83,7 +83,11 @@ of Regions of Attraction in a Learned Space</h1>
     <section class="hero teaser">
         <div class="container is-max-desktop">
             <div class="hero-body">
-                <img id="teaser" src="./static/images/pull.png" alt="Teaser">
+               <div class="publication-video">
+                        <video controls="" muted="" height="80% !important" width="80% !important">
+                            <source src="./static/videos/V-MORALS.mp4" type="video/mp4">
+                        </video>
+                    </div>
             </div>
         </div>
     </section>
@@ -108,19 +112,15 @@ of Regions of Attraction in a Learned Space</h1>
                         <p>
                             Reachability analysis has become increasingly important in robotics to distinguish safe from unsafe states. Unfortunately, existing reachability and safety analysis methods often fall short, as they require known system dynamics or large datasets to estimate accurate system models, are computationally expensive, and assume full state information. Existing work such as MORALS aims to solve this by using topological tools to estimate Regions of Attraction for a controller in a low-dimensional latent space. However, MORALS still relies on full state knowledge and has not been studied when only sensor measurements are available. This paper presents Visual Morse Graph-Aided Discovery of Regions of Attraction in a Learned Space (V-MORALS). V-MORALS takes in a dataset of image- based trajectories of a system under a given controller, and defines a learned latent space for reachability analysis. Using the learned latent space, our method is able to generate well-defined Morse graphs and ROAs for various systems. V-MORALS provides capabilities similar to the original MORALS architecture without relying on state knowledge, and using only high level sensor data.                        
                         </p>
-
-
                     </div>
                 </div>
             </div>
-
     </section>
 
 
     <section class="section" style="padding-top: 1rem; padding-bottom: 1rem;" id="Overview">
         <div class="container is-max-desktop content">
             <h2 class="title is-3">Overview</h2>
-            <img src="./static/images/figure2.png" alt="#">
             <p class="has-text-centered">
                 Using this repository, we present trajectory rollouts of the Humanoid, CartPole, and Pendulum with their corresponding Morse Graphs and ROA maps. 
             </p>
