@@ -22,6 +22,17 @@
     <script src="./static/js/bulma-carousel.min.js"></script>
     <script src="./static/js/bulma-slider.min.js"></script>
     <script src="./static/js/index.js"></script>
+
+    <style>
+        /* Custom style for video captions */
+        .video-caption {
+            font-size: 0.9rem;
+            color: #555;
+            text-align: center;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+    </style>
 </head>
 
 <body>
@@ -36,21 +47,13 @@ of Regions of Attraction in a Learned Space</h1>
                         <div class="is-size-5 publication-authors">
                             <span class="author-block">
                               
-
                             </span>
                         </div>
-
-                        <div class="is-size-5 publication-authors">
-                        </div>
-
-
-                        <div class="is-size-5 publication-authors">   
-                        </div>
-
+                        <div class="is-size-5 publication-authors"></div>
+                        <div class="is-size-5 publication-authors"></div>
 
                         <div class="column has-text-centered">
                             <div class="publication-links">
-
                                 <span class="link-block">
                                     <a href="./static/pdfs/V-MORALS.pdf" target="_blank"
                                         class="external-link button is-normal is-rounded is-dark">
@@ -60,7 +63,6 @@ of Regions of Attraction in a Learned Space</h1>
                                         <span>Paper</span>
                                     </a>
                                 </span>
-
                                 <span class="link-block">
                                     <a href="https://anonymous.4open.science/r/V-MORALS-BB48/README.md" target="_blank"
                                         class="external-link button is-normal is-rounded is-dark">
@@ -70,7 +72,6 @@ of Regions of Attraction in a Learned Space</h1>
                                         <span>Code</span>
                                     </a>
                                 </span>
-
                             </div>
                         </div>
 
@@ -101,7 +102,6 @@ of Regions of Attraction in a Learned Space</h1>
         </div>
     </section>
 
-
     <section class="section">
         <div class="container is-max-desktop">
             <!-- Abstract. -->
@@ -117,7 +117,6 @@ of Regions of Attraction in a Learned Space</h1>
             </div>
     </section>
 
-
     <section class="section" style="padding-top: 1rem; padding-bottom: 1rem;" id="Overview">
         <div class="container is-max-desktop content">
             <h2 class="title is-3">Overview</h2>
@@ -130,36 +129,39 @@ of Regions of Attraction in a Learned Space</h1>
     <section class="section" style="padding-top: 1rem; padding-bottom: 1rem;" id="Results">
         <div class="container is-max-desktop content">
             <h2 class="title is-3">Video Rollouts</h2>
-                    <div class="publication-video">
-                        <video controls="" muted="" height="100% !important" width="100% !important">
-                            <source src="./static/videos/humanoid_trajectory_12_34_merged_final.mp4" type="video/mp4">
-                        </video>
-                    </div>
+            
+            <div class="publication-video">
+                <video controls="" muted="" height="100% !important" width="100% !important">
+                    <source src="./static/videos/humanoid_trajectory_12_34_merged_final.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">
+                    This is a trajectory rollout of a humanoid within a latent space of 2 dimensions. 
+                    We see that the final states are located in different regions.
+                </p>
+            </div>
 
-                    <div class="publication-video">
-                        <video controls="" muted="" height="100% !important" width="100% !important">
-                            <source src="./static/videos/pendulum_trajectory_30_32_merged.mp4" type="video/mp4">
-                        </video>
-                    </div>
+            <div class="publication-video">
+                <video controls="" muted="" height="100% !important" width="100% !important">
+                    <source src="./static/videos/pendulum_trajectory_30_32_merged.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">
+                    This is a trajectory rollout of a Pendulum within a latent space of 2 dimensions. 
+                    Although both trajectories start in the same region (due to similar positions), 
+                    we see that the final states are in distinct regions.
+                </p>
+            </div>
 
-                    <div class="publication-video">
-                        <video controls="" muted="" height="100% !important" width="100% !important">
-                            <source src="./static/videos/cartpole_trajectory_11_10_merged_fast.mp4" type="video/mp4">
-                        </video>
-                    </div>
+            <div class="publication-video">
+                <video controls="" muted="" height="100% !important" width="100% !important">
+                    <source src="./static/videos/cartpole_trajectory_11_10_merged_fast.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">
+                    This is a trajectory rollout of a CartPole within a latent space of 2 dimensions.
+                </p>
+            </div>
 
-
-                </div>
-    </section>
-
-    <!-- <section class="section" style="padding-top: 1rem; padding-bottom: 1rem;" id="Acknowledgement">
-        <div class="container is-max-desktop content">
-            <h2 class="title is-3">Acknowledgement</h2>
-            <p>
-            </p>
         </div>
-    </section> -->
-
+    </section>
 
     <section class="section" id="BibTeX">
         <div class="container is-max-desktop content">
@@ -167,7 +169,6 @@ of Regions of Attraction in a Learned Space</h1>
             <pre><code>TBD</code></pre>
         </div>
     </section>
-
 
     <footer class="footer">
         <div class="container">
@@ -185,5 +186,4 @@ of Regions of Attraction in a Learned Space</h1>
     </footer>
 
 </body>
-
 </html>
