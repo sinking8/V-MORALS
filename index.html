@@ -44,13 +44,24 @@
                     <div class="column has-text-centered">
                         <h1 class="title is-1 publication-title">V-MORALS: Visual Morse Graph-Aided Discovery
 of Regions of Attraction in a Learned Space</h1>
+                        <div class="is-size-5 publication-authors"></div>
                         <div class="is-size-5 publication-authors">
                             <span class="author-block">
-                              
+                            <a href="https://www.linkedin.com/in/faiz-aladin/">Faiz Aladin</a><sup>1</sup>,</span>
+                            <span class="author-block">
+                            <a href="https://www.linkedin.com/in/balasubramanian-ashwin/">Ashwin Balasubramanian</a><sup>1</sup>,
+                            </span>
+                            <span class="author-block">
+                            <a href="https://sites.google.com/view/larslindemann/main-page">Lars Lindemann</a><sup>1,2</sup>,
+                            </span>
+                            <span class="author-block">
+                            <a href="https://danielseita.github.io/">Daniel Seita</a><sup>1</sup>,
                             </span>
                         </div>
-                        <div class="is-size-5 publication-authors"></div>
-                        <div class="is-size-5 publication-authors"></div>
+                         <div class="is-size-5 publication-authors">
+                            <span class="author-block"><sup>1</sup>University of Southern California,</span>
+                            <span class="author-block"><sup>2</sup>ETH Zurich</span>
+                        </div>
 
                         <div class="column has-text-centered">
                             <div class="publication-links">
@@ -117,14 +128,88 @@ of Regions of Attraction in a Learned Space</h1>
             </div>
     </section>
 
-    <section class="section" style="padding-top: 1rem; padding-bottom: 1rem;" id="Overview">
-        <div class="container is-max-desktop content">
-            <h2 class="title is-3">Overview</h2>
-            <p class="has-text-centered">
-                Using this repository, we present trajectory rollouts of the Humanoid, CartPole, and Pendulum with their corresponding Morse Graphs and ROA maps. 
-            </p>
-        </div>
-    </section>
+<section class="section" id="Overview">
+  <div class="container is-max-desktop">
+
+    <h2 class="title is-3">Method Overview</h2>
+
+    <!-- High-level pipeline -->
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <img
+          src="./static/imgs/method_diagram.png"
+          alt="V-MORALS method overview"
+          style="max-width: 100%; height: auto;"
+        />
+        <p class="has-text-grey is-size-6 mt-2">
+          End-to-end pipeline of V-MORALS: from visual trajectories to Morse graphs and regions of attraction.
+        </p>
+      </div>
+    </div>
+
+    <!-- Step-by-step explanation -->
+    <div class="content has-text-justified mt-5">
+      <p>
+        <strong>V-MORALS</strong> performs reachability and safety analysis directly from visual observations,
+        without access to system dynamics or full state information. Given image-based trajectories collected
+        under a fixed controller, the method proceeds in three main stages:
+      </p>
+
+      <ol>
+        <li>
+          <strong>Latent Representation Learning.</strong>
+          Short sequences of images are encoded using a <em>3D convolutional autoencoder</em>, producing a
+          compact latent space that captures the system’s underlying dynamics while mitigating partial
+          observability.
+        </li>
+
+        <li>
+          <strong>Dynamics Modeling.</strong>
+          Transitions between latent states are learned from the encoded trajectories, forming a discrete
+          approximation of the system’s behavior in the learned space.
+        </li>
+
+        <li>
+          <strong>Morse Graph Construction and ROA Discovery.</strong>
+          The latent space is discretized to construct a <em>Morse graph</em>, which summarizes global system
+          behavior. Attractors and their associated <em>Regions of Attraction (ROAs)</em> are then identified
+          directly from this graph.
+        </li>
+      </ol>
+      <p>
+        By operating entirely on image-based data, V-MORALS extends the original MORALS framework to
+        vision-only settings and enables interpretable reachability analysis from high-dimensional sensory inputs.
+      </p>
+    </div>
+
+    <!-- Component visuals -->
+    <div class="columns is-centered mt-5">
+      <div class="column is-half has-text-centered">
+        <img
+          src="./static/imgs/encoder.png"
+          alt="Spatiotemporal encoder architecture"
+          style="max-width: 100%; height: auto;"
+        />
+        <p class="has-text-grey is-size-6 mt-2">
+          Encoder used to learn a compact latent representation from image sequences.
+        </p>
+      </div>
+
+      <div class="column is-half has-text-centered">
+        <img
+          src="./static/imgs/morse_graph.png"
+          alt="Morse graph in latent space"
+          style="max-width: 100%; height: auto;"
+        />
+        <p class="has-text-grey is-size-6 mt-2">
+          Morse graph constructed in the learned latent space, revealing attractors and regions of attraction.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
     <section class="section" style="padding-top: 1rem; padding-bottom: 1rem;" id="Results">
         <div class="container is-max-desktop content">
